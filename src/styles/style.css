@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+/*----colors----*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+p a {
+  display: inline;
+}
+
+li {
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+::selection {
+  background-color: #413a3a;
+  color: #f5f5f5;
+}
+
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* (Opcional) */
+  appearance: none;
+}
+
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: "Josefin Sans", sans-serif;
+  color: #413a3a;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  width: 100%;
+  height: 100vh;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 2rem;
+}
+.hero__picture {
+  width: 6rem;
+}
+
+.picture {
+  background: url(../images/hero-mobile.jpg) no-repeat center;
+  background-size: cover;
+  height: 15rem;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.page__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.page__title {
+  font-size: 3em;
+  text-transform: uppercase;
+  color: #413a3a;
+  letter-spacing: 0.5rem;
+}
+.page__title--accent {
+  font-weight: 300;
+  color: #ce9797;
+}
+.page__paragraph {
+  color: #ce9797;
+  font-size: 0.9em;
+}
+.page__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.page__email {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ce9797;
+  border-radius: 3rem;
+  padding: 0.5rem 0 0.5rem 2rem;
+  height: 3.2rem;
+  gap: 1rem;
+  width: 100%;
+}
+.page__input {
+  width: 100%;
+  outline: none;
+  color: #ce9797;
+}
+.page__input::placeholder {
+  color: #ce9797;
+}
+.page__error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+}
+.page__submit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  padding: 0 1rem;
+  border-radius: 5rem;
+  height: 3.2rem;
+  width: 7rem;
+  box-shadow: 8px 8px 20px #f8bfbf;
+}
+.page__submit:hover {
+  background: linear-gradient(135deg, #fdd3d3, #f5a9a9);
+}
+.page__icon--submit {
+  height: 1.5rem;
+  width: 1rem;
+}
+.page__alert {
+  width: 100%;
+  text-align: start;
+  color: #f96262;
+  padding: 0 2rem;
+  font-size: 0.8rem;
+  opacity: 0;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 0.8em;
+}
+.footer__attribution {
+  color: #413a3a;
+}
+.footer__attribution a {
+  color: #ce9797;
+}
+.footer__attribution a:hover {
+  color: #f96262;
+}
+
+@media (min-width: 768px) {
+  body {
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas: "hero pic" "page pic" "footer pic";
+  }
+  .hero {
+    grid-area: hero;
+  }
+  .picture {
+    grid-area: pic;
+    background: url(../images/hero-desktop.jpg) no-repeat center;
+    background-size: cover;
+    height: 100%;
+  }
+  .page {
+    grid-area: page;
+    padding: 3rem 10rem 3rem 6rem;
+  }
+  .page__info {
+    text-align: start;
+  }
+  .page__submit {
+    width: 8rem;
+  }
+  .footer {
+    grid-area: footer;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
