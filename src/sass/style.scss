@@ -130,6 +130,8 @@ body {
 
 @media (min-width: 768px) {
   body {
+    background: url(../images/svg/bg-pattern-desktop.svg) center no-repeat;
+    background-size: cover;
     grid-template-columns: 1.5fr 1fr;
     grid-template-areas:
       "hero pic"
@@ -162,5 +164,11 @@ body {
 
   .footer {
     grid-area: footer;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page {
+    font-size: 1.5em;
   }
 }
