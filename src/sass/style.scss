@@ -91,6 +91,7 @@ body {
     height: 3.2rem;
     width: 7rem;
     box-shadow: 8px 8px 20px $shadow;
+    cursor: pointer;
 
     &:hover {
       background: $bg;
@@ -126,6 +127,31 @@ body {
       }
     }
   }
+}
+
+[data-title]:hover:after {
+  opacity: 1;
+  transition: all 0.1s ease 0.5s;
+  visibility: visible;
+}
+[data-title]:after {
+  content: attr(data-title);
+  background-color: $primary;
+  color: $light;
+  font-size: 1em;
+  position: absolute;
+  padding: 3px 20px;
+  top: -2rem;
+  left: -4rem;
+  white-space: nowrap;
+  box-shadow: 1px 1px 3px $shadow;
+  opacity: 0;
+  z-index: 99999;
+  visibility: hidden;
+  border-radius: 6px;
+}
+[data-title] {
+  position: relative;
 }
 
 @media (min-width: 768px) {
